@@ -1,0 +1,23 @@
+{
+  "name": "cli-weather",
+  "version": "0.0.3",
+  "description": "get weather in your terminal",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apizzimenti/weather-cli.git"
+  },
+  "preferGlobal": true,
+  "author": "Anthony Pizzimenti",
+  "license": "MIT",
+  "bin": {
+    "weather": "index.js"
+  },
+  "homepage": "https://github.com/apizzimenti/weather-cli#readme",
+  "devDependencies": {
+    "cli-color": "^1.1.0",
+    "public-ip": "^1.1.0"
+  }
+}
