@@ -7,31 +7,10 @@
 // dependencies
 
 var http = require('http'),
+    https = require('https'),
     publicIp = require('public-ip'),
-    clc = require('cli-color');
-
-/**
- * @desc converts temperature
- * @param temp - integer literal; temperature in kelvin
- * @returns {string}
- */
-function KtoF(temp) {
-    return Math.floor((temp * 1.8) - 459.67).toString() + '°';
-}
-
-/**
- * @desc formats JSON
- * @param json - javascript object containing weather information
- * @returns {string}
- */
-function format(json) {
-    var weather =
-        '\nCurrent Conditions: ' + KtoF(json.main.temp) + ', ' + json.weather[0].description + '\n' +
-        'High: ' + clc.red(KtoF(json.main.temp_max)) + '\n' +
-        'Low: ' + clc.blue(KtoF(json.main.temp_min)) + '\n';
-
-    return weather;
-}
+    clc = require('cli-color'),
+    format = require('./formatting');
 
 // gets public ip address
 
@@ -56,8 +35,8 @@ var location_options = {
 // gets location based on retrieved public ip
 
 var location = '',
-    city = '',
-    country = '';
+    lat,
+    long;
 
 http.get(location_options, function (res) {
     var text = '';
@@ -69,28 +48,32 @@ http.get(location_options, function (res) {
         .on('end', function () {
             var json = JSON.parse(text);
             location = json.city + ', ' + json.region_name + ', ' + json.country_name;
-            city = json.city;
-            country = json.country_code;
+            lat = json.latitude;
+            long = json.longitude;
+
             console.log(clc.green('✓ got location: ') + clc.bgBlack.white(location));
 
             // sends HTTP request to weather server
+
             var weather_options = {
-                    host: 'api.openweathermap.org',
-                    path: '/data/2.5/weather?q=' + city + ',' + country.toLowerCase() + '&appid=0267bb2cee53db2d216fc1394801780d',
+                    host: 'api.forecast.io',
+                    path: '/forecast/d399f7331297381cd6b95106add0d22d/' + lat.toString() + ',' + long.toString(),
                     method: 'GET'
                 },
                 weather = '';
 
-            http.get(weather_options, function(res) {
-                var text = '';
+            https.get(weather_options, function(res) {
+                var json  = '';
                 res
                     .on('data', function (chunk) {
-                        console.log(clc.green('✓ got data from weather server'));
-                        text += chunk.toString();
+                        json += chunk;
                     })
                     .on('end', function() {
-                        json = JSON.parse(text);
-                        console.log(format(json));
+                        console.log(clc.green('✓ got data from weather server'));
+                        var x = format(json);
+
+                        console.log(x.current);
+                        console.log(x.week);
                     })
             });
         })
