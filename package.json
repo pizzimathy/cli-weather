@@ -18,10 +18,12 @@
   "homepage": "https://github.com/apizzimenti/weather-cli#readme",
   "devDependencies": {
     "cli-color": "^1.1.0",
-    "public-ip": "^1.1.0"
+    "public-ip": "^1.1.0",
+    "minimist": "^1.2.0"
   },
   "dependencies": {
     "cli-color": "^1.1.0",
-    "public-ip": "^1.1.0"
+    "public-ip": "^1.1.0",
+    "minimist": "^1.2.0"
   }
 }
