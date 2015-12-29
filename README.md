@@ -7,16 +7,16 @@ A simple client to get weather in your terminal. Working on a project but need t
 to get your food? Instead of looking up the weather online, just run `weather` from your terminal, and get instant and
 accurate location-based weather (current and 3-day forecast!).
 
-#### installation
+### installation
 
-`user$: npm install cli-weather -g`
+`user$ npm install cli-weather -g`
 
-#### usage
+### usage
 
 `user$ weather`  
 `user$ weather --address="Atlanta, GA"`  
 `user$ weather --lat=34.1036 --long=-84.6374`  
 
-#### api
+### api
 
 coming soon...
