@@ -1,6 +1,6 @@
 {
   "name": "cli-weather",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "get weather in your terminal",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
