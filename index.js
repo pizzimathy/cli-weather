@@ -49,13 +49,15 @@ if (argv.address) {
             })
             .on('end', function () {
                 var json = JSON.parse(text);
-                console.log(clc.green('✓ got geo location server response'));
-
-                lat = json.results[0].geometry.location.lat;
-                long = json.results[0].geometry.location.lng;
-
-                // sends HTTP request to weather server
-                weatherRequest();
+                if (json.status == "OK" && json.results[0]) {
+                    console.log(clc.green('✓ got geo location server response'));
+                    lat = json.results[0].geometry.location.lat;
+                    long = json.results[0].geometry.location.lng;
+                    // sends HTTP request to weather server
+                    weatherRequest();
+                } else {
+                    console.log(clc.red('✗ address not found'));
+                }
             })
     });
 
