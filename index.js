@@ -59,9 +59,9 @@ if (argv.address) {
             })
     });
 
-} else if (argv.l && argv.o) {
-    lat = argv.l;
-    long = argv.o;
+} else if (argv.lat && argv.long) {
+    lat = argv.lat;
+    long = argv.long;
     console.log(clc.green('✓ manual lat long set'));
 
     // sends HTTP request to weather server
