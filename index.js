@@ -5,7 +5,6 @@
  */
 
 // dependencies
-
 var http = require('http'),
     https = require('https'),
     publicIp = require('public-ip'),
@@ -30,8 +29,6 @@ publicIp(function (err, res) {
     }
 });
 
-
-
 var argv = parseArgs(process.argv.slice(2), opts={});
 
 if (argv.address) {
@@ -53,6 +50,7 @@ if (argv.address) {
                     console.log(clc.green('✓ got geo location server response'));
                     lat = json.results[0].geometry.location.lat;
                     long = json.results[0].geometry.location.lng;
+                    
                     // sends HTTP request to weather server
                     weatherRequest();
                 } else {
