@@ -5,6 +5,7 @@
  */
 
 // dependencies
+
 var http = require('http'),
     https = require('https'),
     publicIp = require('public-ip'),
@@ -29,10 +30,11 @@ publicIp(function (err, res) {
     }
 });
 
+
+
 var argv = parseArgs(process.argv.slice(2), opts={});
 
 if (argv.address) {
-    console.log(clc.green('✓ address: ') + clc.bgBlack.white(argv.address));
     location_options = {
         host: 'maps.googleapis.com',
         path: '/maps/api/geocode/json?address=' + encodeURIComponent(argv.address.toString()),
@@ -48,9 +50,9 @@ if (argv.address) {
                 var json = JSON.parse(text);
                 if (json.status == "OK" && json.results[0]) {
                     console.log(clc.green('✓ got geo location server response'));
+                    console.log(clc.green('✓ got location: ') + clc.bgBlack.white(json.results[0].formatted_address));
                     lat = json.results[0].geometry.location.lat;
                     long = json.results[0].geometry.location.lng;
-                    
                     // sends HTTP request to weather server
                     weatherRequest();
                 } else {
