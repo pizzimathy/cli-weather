@@ -10,7 +10,7 @@ var http = require('http'),
     https = require('https'),
     publicIp = require('public-ip'),
     clc = require('cli-color'),
-    format = require('./formatting');
+    Format = require('./lib/Format');
 
 // gets public ip address
 
@@ -54,27 +54,27 @@ http.get(location_options, function (res) {
             console.log(clc.green('✓ got location: ') + clc.bgBlack.white(location));
 
             // sends HTTP request to weather server
-
-            var weather_options = {
-                    host: 'api.forecast.io',
-                    path: '/forecast/d399f7331297381cd6b95106add0d22d/' + lat.toString() + ',' + long.toString(),
-                    method: 'GET'
-                },
-                weather = '';
-
-            https.get(weather_options, function(res) {
-                var json  = '';
-                res
-                    .on('data', function (chunk) {
-                        json += chunk;
-                    })
-                    .on('end', function() {
-                        console.log(clc.green('✓ got data from weather server'));
-                        var x = format(json);
-
-                        console.log(x.current);
-                        console.log(x.week);
-                    })
-            });
+            weatherRequest();
         })
 });
+
+function weatherRequest() {
+    var weather_options = {
+            host: 'api.forecast.io',
+            path: '/forecast/d399f7331297381cd6b95106add0d22d/' + lat.toString() + ',' + long.toString(),
+            method: 'GET'
+        };
+
+    https.get(weather_options, function(res) {
+        var json  = '';
+        res
+            .on('data', function (chunk) {
+                json += chunk;
+            })
+            .on('end', function() {
+                console.log(clc.green('✓ got data from weather server'));
+                var weather = Format(json);
+                console.log(weather.weather);
+            })
+    });
+}
