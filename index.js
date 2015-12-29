@@ -6,7 +6,9 @@
 
 // dependencies
 
-var publicIp = require('public-ip'),
+var http = require('http'),
+    https = require('https'),
+    publicIp = require('public-ip'),
     clc = require('cli-color'),
     parseArgs = require('minimist'),
     Format = require('./lib/Format'),
@@ -38,6 +40,7 @@ if (argv.address) {
 
     // sends HTTP request to weather server
     args.weatherRequest();
+
 } else {
     args.automatic(ip);
 }
