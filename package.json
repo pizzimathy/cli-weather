@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "cli-color": "^1.1.0",
-    "public-ip": "^1.1.0",
-    "minimist": "^1.2.0"
+    "cliff": "^0.1.10",
+    "minimist": "^1.2.0",
+    "public-ip": "^1.1.0"
   }
 }
