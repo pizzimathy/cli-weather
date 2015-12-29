@@ -8,3 +8,9 @@ accurate location-based weather (current and 3-day forecast!).
 
 ####installation
 `user$: npm install cli-weather -g`
+
+####usage
+`user$ weather`
+
+####api
+coming soon...
