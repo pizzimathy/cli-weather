@@ -18,6 +18,7 @@ accurate location-based weather (current and 3-day forecast!).
 
 `user$ weather`  
 `user$ weather --address="Atlanta, GA"` 
+
 `user$ weather -a "Atlanta, GA"`    
 `user$ weather --lat=34.1036 --long=-84.6374`  
 
