@@ -25,7 +25,7 @@ accurate location-based weather (current and 3-day forecast!).
 
 Use the -c option flag to specify metric units (celsius for temp and meters per second for windspeed) 
 
-`user$ weather -c`  
+`$ weather -c`  
 
 #### sample output
 **Fahrenheit**
