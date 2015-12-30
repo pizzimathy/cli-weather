@@ -27,6 +27,13 @@ Use the -c option flag to specify metric units (celsius for temp and meters per 
 
 `user$ weather -c`  
 
+#### sample output
+**Fahrenheit**
+![Sample output in F](https://cloud.githubusercontent.com/assets/1588753/12046260/341c3818-ae6a-11e5-9e75-4080ee573b9a.png)
+
+**Celsius**
+![Sample output in C](https://cloud.githubusercontent.com/assets/1588753/12046261/342f8bac-ae6a-11e5-9a85-cc90065b2650.png)
+
 #### api
 
 coming soon...
