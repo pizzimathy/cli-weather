@@ -12,7 +12,8 @@ var http = require('http'),
     clc = require('cli-color'),
     parseArgs = require('minimist'),
     Format = require('./lib/Format'),
-    args = require('./lib/args');
+    args = require('./lib/args'),
+    fs = require('fs');
 
 var ip = '',
     units = {
@@ -34,21 +35,47 @@ publicIp(function (err, res) {
 
 var argv = parseArgs(process.argv.slice(2), opts={});
 
-if (argv.c) {
-    units = {
-        type: 'si',
-        tmp: '˚C',
-        speed: 'mps'
-    };
-} 
+if (argv.save === true || argv.s === true){
+  // we want to save this configuration to use again later
+  fs.writeFile('./config.json', JSON.stringify(argv), function (err) {
+    if (err) {
+      console.log(clc.red('˟ something went wrong [' + JSON.stringify(err) + ']'));
+    }
+    console.log(clc.green('✓ saved data as a preset'));
+  });
+}
 
-if (address = argv.address || argv.a) {
-    args.address(address, args.weatherRequest, units);
+if (argv._.length === 0){
+  // if we're not passing any arguments, check to see if we have a config file
+  fs.readFile('./config.json', function (err, data) {
+    // if we do, load it
+    if (err) {
+      console.log(clc.red('˟ no config file found'));
+    }else{
+      console.log(clc.green('✓ read config.json in as arguments'));
+      argv = JSON.parse(data);
+    }
+    handleArgs();
+  });
+}
 
-} else if (argv.lat && argv.long) {
-    args.weatherRequest({lat: argv.lat, long: argv.long}, units);
+function handleArgs(){
+  if (argv.c) {
+      units = {
+          type: 'si',
+          tmp: '˚C',
+          speed: 'mps'
+      };
+  }
 
-} else {
-    args.automatic(ip, args.weatherRequest, units);
+  if (address = argv.address || argv.a) {
+      args.address(address, args.weatherRequest, units);
 
+  } else if (argv.lat && argv.long) {
+      args.weatherRequest({lat: argv.lat, long: argv.long}, units);
+
+  } else {
+      args.automatic(ip, args.weatherRequest, units);
+
+  }
 }
