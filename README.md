@@ -12,14 +12,14 @@ accurate location-based weather (current and 3-day forecast!).
 
 #### installation
 
-`user$: npm install cli-weather -g`
+`$ npm install cli-weather -g`
 
 #### usage
 
-`user$ weather`  
-`user$ weather -a "Atlanta, GA"`  
-`user$ weather --address="Atlanta, GA"`  
-`user$ weather --lat=34.1036 --long=-84.6374`  
+`$ weather`  
+`$ weather -a "Atlanta, GA"`  
+`$ weather --address="Atlanta, GA"`  
+`$ weather --lat=34.1036 --long=-84.6374`  
 
 #### units
 
