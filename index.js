@@ -52,8 +52,12 @@ if (argv._.length === 0){
     if (err) {
       console.log(clc.red('˟ no config file found'));
     }else{
-      console.log(clc.green('✓ read config.json in as arguments'));
-      argv = JSON.parse(data);
+      try{
+        argv = JSON.parse(data);
+        console.log(clc.green('✓ read config.json in as arguments'));
+      }catch(e){
+        console.log(clc.red('˟ bad config file found'));
+      }
     }
     handleArgs();
   });
