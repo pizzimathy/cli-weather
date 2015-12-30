@@ -14,7 +14,12 @@ var http = require('http'),
     Format = require('./lib/Format'),
     args = require('./lib/args');
 
-var ip = '';
+var ip = '',
+    units = {
+        type: 'us',
+        tmp: '˚F',
+        speed: 'mph'
+    };
 
 // gets public ip address
 publicIp(function (err, res) {
@@ -29,16 +34,21 @@ publicIp(function (err, res) {
 
 var argv = parseArgs(process.argv.slice(2), opts={});
 
-if (argv.address) {
-    args.address(argv.address)
+if (argv.c) {
+    units = {
+        type: 'si',
+        tmp: '˚C',
+        speed: 'mps'
+    };
+} 
+
+if (address = argv.address || argv.a) {
+    args.address(address, args.weatherRequest, units);
+
 } else if (argv.lat && argv.long) {
-    console.log(clc.green('✓ manual lat long set'));
-
-    args.collectLatLong(argv.lat, argv.long);
-
-    // sends HTTP request to weather server
-    args.weatherRequest();
+    args.weatherRequest({lat: argv.lat, long: argv.long}, units);
 
 } else {
-    args.automatic(ip);
+    args.automatic(ip, args.weatherRequest, units);
+
 }
