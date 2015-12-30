@@ -7,8 +7,8 @@
 
 
 A simple client to get weather in your terminal. Working on a project but need to run across the street to Jimmy John's
-to get your food? Instead of looking up the weather online, just run `weather` from your terminal, and get instant and
-accurate location-based weather (current and 3-day forecast!).
+to get your food? Instead of looking up the weather online, just run `weather` from your terminal and get instant,
+accurate location-based weather (current and 4-day forecast!).
 
 #### installation
 
