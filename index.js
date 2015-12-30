@@ -61,6 +61,8 @@ if (argv._.length === 0){
     }
     handleArgs();
   });
+}else{
+  handleArgs();
 }
 
 function handleArgs(){
