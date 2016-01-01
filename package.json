@@ -1,6 +1,6 @@
 {
   "name": "cli-weather",
-  "version": "1.0.0",
+  "version": "1.2.7",
   "description": "get weather in your terminal",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "cli-color": "^1.1.0",
+    "cli-table": "^0.3.1",
+    "minimist": "^1.2.0",
     "public-ip": "^1.1.0",
-    "minimist": "^1.2.0"
+    "update-notifier": "^0.6.0"
   }
 }

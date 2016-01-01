@@ -6,17 +6,20 @@
 
 // dependencies
 
-var http = require('http'),
-    https = require('https'),
-    publicIp = require('public-ip'),
+var publicIp = require('public-ip'),
     clc = require('cli-color'),
-    parseArgs = require('minimist'),
-    Format = require('./lib/Format'),
-    args = require('./lib/args');
+    config = require('./lib/Config');
 
-var ip = '';
+
+var ip = '',
+    units = {
+        type: 'us',
+        tmp: '˚F',
+        speed: 'mph'
+    };
 
 // gets public ip address
+
 publicIp(function (err, res) {
 
     if (err) {
@@ -27,18 +30,8 @@ publicIp(function (err, res) {
     }
 });
 
-var argv = parseArgs(process.argv.slice(2), opts={});
+// new instance of a Config object
+var Config = new config(units, ip);
 
-if (argv.address) {
-    args.address(argv.address)
-} else if (argv.lat && argv.long) {
-    console.log(clc.green('✓ manual lat long set'));
-
-    args.collectLatLong(argv.lat, argv.long);
-
-    // sends HTTP request to weather server
-    args.weatherRequest();
-
-} else {
-    args.automatic(ip);
-}
+// main Config method, which handles arguments and http calls
+Config.control();
