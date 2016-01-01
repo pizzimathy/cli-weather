@@ -10,6 +10,7 @@ var publicIp = require('public-ip'),
     clc = require('cli-color'),
     config = require('./lib/config');
 
+
 var ip = '',
     units = {
         type: 'us',
