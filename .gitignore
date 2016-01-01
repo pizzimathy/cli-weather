@@ -29,8 +29,9 @@ build/Release
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 
+# annoying files
 *.DS_Store
 /.idea
 
-# for user settings
-config.json
+# for configs - snolly, you were right
+/lib/config.json
