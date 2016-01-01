@@ -31,3 +31,6 @@ node_modules
 
 *.DS_Store
 /.idea
+
+# for configs - snolly, you were right
+/lib/config.json    
