@@ -8,7 +8,7 @@
 
 var publicIp = require('public-ip'),
     clc = require('cli-color'),
-    config = require('./lib/config');
+    config = require('./lib/Config');
 
 
 var ip = '',
@@ -19,6 +19,7 @@ var ip = '',
     };
 
 // gets public ip address
+
 publicIp(function (err, res) {
 
     if (err) {
@@ -29,6 +30,8 @@ publicIp(function (err, res) {
     }
 });
 
+// new instance of a Config object
 var Config = new config(units, ip);
 
+// main Config method, which handles arguments and http calls
 Config.control();
