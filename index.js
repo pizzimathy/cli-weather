@@ -8,30 +8,42 @@
 
 var publicIp = require('public-ip'),
     clc = require('cli-color'),
-    config = require('./lib/Config');
+    config = require('./lib/config'),
+    events = require('events');
 
-
-var ip = '',
-    units = {
+var units = {
         type: 'us',
         tmp: '˚F',
         speed: 'mph'
     };
 
-// gets public ip address
+var ip = '';
 
+// gets public ip address
 publicIp(function (err, res) {
 
     if (err) {
-        console.log(clc.red('˟ couldn\'t find public ip address'));
+        console.log(clc.red('✗ couldn\'t find public ip address'));
     } else if (res) {
         ip = res;
-        console.log(clc.green('✓ got ip address'));
     }
 });
 
-// new instance of a Config object
+// new Config instance
 var Config = new config(units, ip);
+Config.sudo();
 
-// main Config method, which handles arguments and http calls
-Config.control();
+// update notifications
+/*var updateNotifier = require('update-notifier'),
+    col = clc.bgBlack.white;
+
+var notifier = updateNotifier({
+    updateCheckInterval: 1000 * 60 * 60 * 24
+});
+
+if (notifier.update) {
+    notifier.notify(
+        'Update for cli-weather available: version ' + notifier.update.latest + '\n' +
+        'Run ' + col('sudo npm i cli-weather -g') + ' to install.'
+    );
+}*/
