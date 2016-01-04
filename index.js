@@ -34,16 +34,8 @@ var Config = new config(units, ip);
 Config.sudo();
 
 // update notifications
-/*var updateNotifier = require('update-notifier'),
-    col = clc.bgBlack.white;
+var updateNotifier = require('update-notifier'),
+    col = clc.bgBlack.white,
+    pkg = require('./package.json');
 
-var notifier = updateNotifier({
-    updateCheckInterval: 1000 * 60 * 60 * 24
-});
-
-if (notifier.update) {
-    notifier.notify(
-        'Update for cli-weather available: version ' + notifier.update.latest + '\n' +
-        'Run ' + col('sudo npm i cli-weather -g') + ' to install.'
-    );
-}*/
+updateNotifier({pkg:pkg}).notify();
