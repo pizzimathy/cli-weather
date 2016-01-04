@@ -29,7 +29,7 @@ Use the -c option flag to specify metric units (celsius for temp and meters per 
 
 #### configuration
 
-If you always want to see weather for a particular area or with celsius instead of fahrenheit, pass `--save` along with your preferred values, and the next time you run `weather` without any arguments, it will get those values and give you weather for them.
+If you always want to see weather for a particular area or with celsius instead of fahrenheit, pass `--save`  or `-s` along with your preferred values, and the next time you run `weather` without any arguments, it will get those values and give you weather for them.
 
 #### sample output
 **Fahrenheit**
