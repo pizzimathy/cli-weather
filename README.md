@@ -33,15 +33,19 @@ If you always want to see weather for a particular area or with celsius instead 
 
 #### sample output
 **Fahrenheit**
+
 ![Sample output in F](https://dl.dropbox.com/s/rh7okhbozy5bf4v/f.png?dl=0)
 
 **Celsius**
+
 ![Sample output in C](https://dl.dropbox.com/s/51fc6imsxnj5v2k/c.png?dl=0)
 
 **Saving**
+
 ![Sample save output](https://dl.dropbox.com/s/u2li8lrkn5f05hy/s.png?dl=0)
 
 **Custom Location**
+
 ![Sample custom location output](https://dl.dropbox.com/s/u7s65uxwe0c37gf/a.png?dl=0);
 
 #### api
