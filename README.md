@@ -1,6 +1,6 @@
 # cli-weather
 
-[![NPM](https://nodei.co/npm/cli-weather.png?compact=true)](https://nodei.co/npm/cli-weather/)
+[![NPM](https://nodei.co/npm/cli-weather.png?downloads=true)](https://nodei.co/npm/cli-weather/)
 [![NPM](https://nodei.co/npm-dl/cli-weather.png?months=1)](https://nodei.co/npm/cli-weather/)
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
