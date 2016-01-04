@@ -1,6 +1,7 @@
 # cli-weather
 
 [![NPM](https://nodei.co/npm/cli-weather.png?compact=true)](https://nodei.co/npm/cli-weather/)
+[![NPM](https://nodei.co/npm-dl/cli-weather.png?months=1)](https://nodei.co/npm/cli-weather/)
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 [![npm](https://img.shields.io/npm/v/npm.svg)]()
@@ -33,10 +34,16 @@ If you always want to see weather for a particular area or with celsius instead 
 
 #### sample output
 **Fahrenheit**
-![Sample output in F](https://cloud.githubusercontent.com/assets/1588753/12046260/341c3818-ae6a-11e5-9e75-4080ee573b9a.png)
+![Sample output in F](lib/images/f.png)
 
 **Celsius**
-![Sample output in C](https://cloud.githubusercontent.com/assets/1588753/12046261/342f8bac-ae6a-11e5-9a85-cc90065b2650.png)
+![Sample output in C](lib/images/c.png)
+
+**Saving**
+![Sample save output](lib/images/s.png)
+
+**Custom Location**
+![Sample custom location output](lib/images/f.png);
 
 #### api
 
