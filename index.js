@@ -32,10 +32,3 @@ publicIp(function (err, res) {
 // new Config instance
 var Config = new config(units, ip);
 Config.sudo();
-
-// update notifications
-var updateNotifier = require('update-notifier'),
-    col = clc.bgBlack.white,
-    pkg = require('./package.json');
-
-updateNotifier({pkg:pkg}).notify();
