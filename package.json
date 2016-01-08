@@ -3,7 +3,7 @@
   "version": "1.3.73",
   "description": "get weather in your terminal",
   "scripts": {
-    "test": "test/test.js"
+    "test": "node test/test-*.js && jshint index.js lib/*.js"
   },
   "repository": {
     "type": "git",
