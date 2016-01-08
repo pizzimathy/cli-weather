@@ -2,13 +2,13 @@
 
 [![NPM](https://nodei.co/npm/cli-weather.png?compact=true)](https://nodei.co/npm/cli-weather/)
 
-[![npm](https://img.shields.io/npm/l/express.svg)]()
+[![npm](https://img.shields.io/npm/l/cli-weather.svg?style=flat-square)]()
 [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)]()
+[![node](https://img.shields.io/node/v/gh-badges.svg?style=flat-square)]()
 [![Build status](https://img.shields.io/travis/apizzimenti/cli-weather.svg?style=flat-square)](https://travis-ci.org/apizzimenti/cli-weather)
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
-[![npm](https://img.shields.io/npm/dt/express.svg)]()
-[![node](https://img.shields.io/node/v/gh-badges.svg)]()
-[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)]()
+[![npm](https://img.shields.io/npm/dt/cli-weather.svg?style=flat-square)]()
+[![GitHub issues](https://img.shields.io/github/issues/apizzimenti/cli-weather.svg?style=flat-square)]()
+[![Github All Releases](https://img.shields.io/github/downloads/apizzimenti/cli-weather.svg?style=flat-square)]()
 
 
 A simple client to get weather in your terminal. Working on a project but need to run across the street to Jimmy John's
