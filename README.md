@@ -2,8 +2,9 @@
 
 [![NPM](https://nodei.co/npm/cli-weather.png?compact=true)](https://nodei.co/npm/cli-weather/)
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
-[![npm](https://img.shields.io/npm/v/npm.svg)]()
+![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+[![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)]()
+[![Build status](https://img.shields.io/travis/apizzimenti/cli-weather.svg?style=flat-square)](https://travis-ci.org/apizzimenti/cli-weather)
 
 
 A simple client to get weather in your terminal. Working on a project but need to run across the street to Jimmy John's
