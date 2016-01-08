@@ -1,9 +1,9 @@
 {
   "name": "cli-weather",
-  "version": "1.3.73",
+  "version": "1.3.74",
   "description": "get weather in your terminal",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test-*.js && jshint index.js lib/*.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,8 @@
   "homepage": "https://github.com/apizzimenti/cli-weather#readme",
   "devDependencies": {
     "cli-color": "^1.1.0",
-    "public-ip": "^1.1.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "public-ip": "^1.1.0"
   },
   "dependencies": {
     "cli-color": "^1.1.0",
