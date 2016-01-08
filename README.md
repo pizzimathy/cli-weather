@@ -7,7 +7,7 @@
 [![node](https://img.shields.io/node/v/gh-badges.svg?style=flat-square)]()
 [![Build status](https://img.shields.io/travis/apizzimenti/cli-weather.svg?style=flat-square)](https://travis-ci.org/apizzimenti/cli-weather)
 [![npm](https://img.shields.io/npm/dt/cli-weather.svg?style=flat-square)]()
-[![GitHub issues](https://img.shields.io/github/issues/apizzimenti/cli-weather.svg?style=flat-square)]()
+[![GitHub issues](https://img.shields.io/github/issues-raw/apizzimenti/cli-weather.svg?style=flat-square)]()
 
 
 A simple client to get weather in your terminal. Working on a project but need to run across the street to Jimmy John's
