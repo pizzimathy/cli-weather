@@ -34,6 +34,7 @@ var Config = new config(units, ip);
 Config.sudo();
 
 // update-notifier
+/*
 var updateNotifier = require('update-notifier'),
     pkg = require('./package.json'),
     notifier = updateNotifier({pkg: pkg});
@@ -41,6 +42,7 @@ var updateNotifier = require('update-notifier'),
 if (notifier.update) {
     console.log('\nUpdate available: ' + chalk.bgWhite.red(notifier.update.current) + ' → ' + chalk.bgWhite.green(notifier.update.latest));
 }
+*/
 
 
 
