@@ -1,6 +1,6 @@
 {
   "name": "cli-weather",
-  "version": "1.3.76",
+  "version": "1.3.77",
   "description": "get weather in your terminal",
   "scripts": {
     "test": "node test/test-*.js && jshint index.js lib/*.js"
@@ -19,7 +19,8 @@
   "devDependencies": {
     "jshint": "^2.9.1-rc2",
     "minimist": "^1.2.0",
-    "public-ip": "^1.1.0"
+    "public-ip": "^1.1.0",
+    "update-notifier": "^0.6.0"
   },
   "dependencies": {
     "chalk": "^1.1.1",
