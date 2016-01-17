@@ -7,7 +7,7 @@
 // dependencies
 
 var publicIp = require('public-ip'),
-    clc = require('cli-color'),
+    chalk = require('chalk'),
     config = require('./lib/config'),
     events = require('events');
 
@@ -23,7 +23,7 @@ var ip = '';
 publicIp(function (err, res) {
 
     if (err) {
-        console.log(clc.red('✗ couldn\'t find public ip address'));
+        console.log(chalk.red('✗ couldn\'t find public ip address'));
     } else if (res) {
         ip = res;
     }
