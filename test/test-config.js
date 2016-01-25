@@ -11,11 +11,25 @@ var units = {
     },
     ip = '1101';
 
-var Config = new config(units, ip),
-    flag = false;
+var Config = config(units, ip);
 
-if (typeof(Config) === 'object') {
-    flag = true;
-}
+describe('Config', function () {
+    it('has 3 props', function () {
+        assert(Object.keys(Config).length === 3);
+    });
 
-assert(flag, 'Config is not an object');
+    it('after construction, 2 props are populated', function () {
+        var count = 0;
+
+        Object.keys(Config).forEach(function (key) {
+            key !== null || key !== '' ? count++ : count;
+        });
+        assert(count, 2);
+    });
+
+    it('has correct key types', function () {
+        Object.keys(Config).forEach(function (key) {
+            assert(typeof(key) === 'object' || typeof(key) === 'string');
+        })
+    });
+});
