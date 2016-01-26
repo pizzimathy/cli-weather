@@ -5,5 +5,8 @@ node_js:
   - "0.12"
   - "0.11"
 
+<<<<<<< HEAD
 sudo: required
 
+=======
+>>>>>>> hood/test
