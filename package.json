@@ -19,6 +19,7 @@
   "devDependencies": {
     "jshint": "^2.9.1-rc2",
     "minimist": "^1.2.0",
+    "mocha": "^2.3.4",
     "public-ip": "^1.1.0",
     "update-notifier": "^0.6.0"
   },
@@ -27,6 +28,7 @@
     "cli-table": "^0.3.1",
     "inpath": "^1.0.2",
     "minimist": "^1.2.0",
+    "mocha": "^2.3.4",
     "pidof": "^1.0.2",
     "public-ip": "^1.1.0",
     "update-notifier": "^0.6.0"
