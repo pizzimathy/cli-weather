@@ -32,3 +32,5 @@ publicIp(function (err, res) {
 // new Config instance
 var Config = new config(units, ip);
 Config.sudo();
+
+console.log(chalk.dim('powered by Forecast.io'));
