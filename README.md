@@ -7,7 +7,6 @@
 [![node](https://img.shields.io/node/v/gh-badges.svg?style=flat-square)]()
 [![Build status](https://img.shields.io/travis/apizzimenti/cli-weather.svg?style=flat-square)](https://travis-ci.org/apizzimenti/cli-weather)
 [![npm](https://img.shields.io/npm/dt/cli-weather.svg?style=flat-square)]()
-[![Github All Releases](https://img.shields.io/github/downloads/apizzimenti/cli-weather/total.svg?style=flat-square)]()
 [![GitHub issues](https://img.shields.io/github/issues-raw/apizzimenti/cli-weather.svg?style=flat-square)]()
 
 
