@@ -29,8 +29,9 @@ publicIp(function (err, res) {
     }
 });
 
-// new Config instance
+// new Config instance, initializes the app
 var Config = new config(units, ip);
 Config.sudo();
 
+// credit to Forecast.io
 console.log(chalk.dim('powered by Forecast.io'));
