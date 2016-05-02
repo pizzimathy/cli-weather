@@ -52,7 +52,12 @@ and give you weather for them.
 
 **Custom Location**
 
-![Sample custom location output](https://dl.dropbox.com/s/u7s65uxwe0c37gf/a.png?dl=0);
+![Sample custom location output](https://dl.dropbox.com/s/u7s65uxwe0c37gf/a.png?dl=0)
+
+**Verbose**
+
+![Verbose output](https://dl.dropbox.com/s/ob842j5r0yz78ec/v.png?dl=0)
+
 
 #### api
 
