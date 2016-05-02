@@ -1,6 +1,6 @@
 {
   "name": "cli-weather",
-  "version": "1.4.0",
+  "version": "1.4.01",
   "description": "get weather in your terminal",
   "scripts": {
     "test": "mocha && jshint index.js lib/*.js"
@@ -30,7 +30,7 @@
     "minimist": "^1.2.0",
     "mocha": "^2.3.4",
     "pidof": "^1.0.2",
-    "public-ip": "^1.1.0",
+    "public-ip": "^1.2.0",
     "update-notifier": "^0.6.0"
   }
 }
