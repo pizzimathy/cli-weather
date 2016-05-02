@@ -8,7 +8,7 @@
 
 var publicIp = require('public-ip'),
     chalk = require('chalk'),
-    config = require('./lib/config'),
+    conf = require('./lib/config'),
     events = require('events');
 
 var units = {
@@ -30,7 +30,7 @@ publicIp(function (err, res) {
 });
 
 // new Config instance, initializes the app
-var Config = new config(units, ip);
+var Config = new conf(units, ip);
 Config.sudo();
 
 // credit to Forecast.io
