@@ -9,7 +9,10 @@
 var publicIp = require('public-ip'),
     chalk = require('chalk'),
     conf = require('./lib/config'),
-    events = require('events');
+    events = require('events'),
+
+    update_notifier = require('update-notifier'),
+    pkg = require('./package.json');
 
 var units = {
         type: 'us',
@@ -35,3 +38,5 @@ Config.sudo();
 
 // credit to Forecast.io
 console.log(chalk.dim('powered by Forecast.io'));
+
+update_notifier({pkg}).notify();
