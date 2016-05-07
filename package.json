@@ -1,6 +1,6 @@
 {
   "name": "cli-weather",
-  "version": "1.5.06",
+  "version": "1.5.07",
   "description": "get weather in your terminal",
   "scripts": {
     "test": "mocha && jshint index.js lib/*.js"
