@@ -3,7 +3,7 @@
  */
 
 var assert = require('assert'),
-    format = require('./../lib/format');
+    format = require('././format');
 
 describe('format', function () {
     it('is a constructor of the Format object', function () {

@@ -34,4 +34,4 @@ node_modules
 /.idea
 
 # for configs - snolly, you were right
-/lib/config.json
+/src/config.json

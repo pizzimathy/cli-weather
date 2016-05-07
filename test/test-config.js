@@ -3,7 +3,7 @@
  */
 
 var assert = require('assert'),
-    config = require('./../lib/config');
+    config = require('././config');
 
 var units = {
         prop_1: 1,

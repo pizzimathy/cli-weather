@@ -9,7 +9,7 @@ var args = require('./args'),
 
     pathing = require('path');
 
-var path = pathing.dirname(require.main.filename) + '/lib/config.json',
+var path = pathing.dirname(require.main.filename) + '/src/config.json',
     help = require('./help');
 
 function Config(units, ip) {
