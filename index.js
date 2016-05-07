@@ -38,5 +38,3 @@ Config.sudo();
 
 // credit to Forecast.io
 console.log(chalk.dim('powered by Forecast.io'));
-
-update_notifier({pkg}).notify();
