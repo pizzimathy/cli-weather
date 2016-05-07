@@ -21,10 +21,15 @@ accurate location-based weather (current and 4-day forecast!).
 #### usage
 
 `$ weather`
+
 `$ weather -z 90210`
+
 `$ weather -a "Atlanta, GA"`
+
 `$ weather --address="Atlanta, GA"`
+
 `$ weather --lat=34.1036 --long=-84.6374`  
+
 
 #### units
 
@@ -56,6 +61,7 @@ and give you weather for them.
 ![Sample custom location output](https://dl.dropbox.com/s/u7s65uxwe0c37gf/a.png?dl=0)
 
 **Zip Code**
+
 ![Sample zip code output](https://dl.dropbox.com/s/pciz2ut1bzyc7f9/z.png?dl=0)
 
 **Verbose**
