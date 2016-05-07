@@ -20,9 +20,10 @@ accurate location-based weather (current and 4-day forecast!).
 
 #### usage
 
-`$ weather`  
-`$ weather -a "Atlanta, GA"`  
-`$ weather --address="Atlanta, GA"`  
+`$ weather`
+`$ weather -z 90210`
+`$ weather -a "Atlanta, GA"`
+`$ weather --address="Atlanta, GA"`
 `$ weather --lat=34.1036 --long=-84.6374`  
 
 #### units
@@ -54,14 +55,9 @@ and give you weather for them.
 
 ![Sample custom location output](https://dl.dropbox.com/s/u7s65uxwe0c37gf/a.png?dl=0)
 
+**Zip Code**
+![Sample zip code output](https://dl.dropbox.com/s/pciz2ut1bzyc7f9/z.png?dl=0)
+
 **Verbose**
 
 ![Verbose output](https://dl.dropbox.com/s/ob842j5r0yz78ec/v.png?dl=0)
-
-
-#### api
-
-coming soon...
-
-The cli-weather api will allow you to `require()` cli-weather in your apps/sites and get all the data and formatting that
-powers this module.
