@@ -9,10 +9,7 @@
 var publicIp = require('public-ip'),
     chalk = require('chalk'),
     conf = require('./src/config'),
-    events = require('events'),
-
-    update_notifier = require('update-notifier'),
-    pkg = require('./package.json');
+    events = require('events');
 
 var units = {
         type: 'us',
