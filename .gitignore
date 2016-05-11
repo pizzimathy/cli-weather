@@ -35,3 +35,5 @@ node_modules
 
 # for configs - snolly, you were right
 /src/config.json
+
+.yo-rc.json
