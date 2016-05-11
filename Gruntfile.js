@@ -28,9 +28,16 @@ module.exports = function (grunt) {
         },
 
         tslint: {
-            options:{},
+            options:{
+                whitespace: [true, "check-decl", "check-separator"],
+                variable_name: [true, "check-format", "allow-leading-underscore"],
+                triple_equals: true,
+                "no-unused-expression": true,
+                "no-unused-variable": true
+            },
+
             files: {
-                src: ['src/**/*.ts']
+                src: ['src/**/*.ts', '!src/**/*.d.ts']
             }
         },
 
