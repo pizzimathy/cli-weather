@@ -13,7 +13,7 @@
   "author": "Anthony Pizzimenti",
   "license": "MIT",
   "bin": {
-    "weather": "dist/cli-weather.js"
+    "weather": "index.js"
   },
   "homepage": "https://github.com/apizzimenti/cli-weather#readme",
   "devDependencies": {
