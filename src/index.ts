@@ -2,11 +2,9 @@
  * Created by apizzimenti on 5/10/16.
  */
 
-/// <reference path="../typings/main.d.ts" />
-
 import https = require("https");
 import argv = require("minimist");
-import {Config, IpConfig, AddrConfig} from "./lib/Config.ts";
+import {Config, IpConfig, AddrConfig} from "./lib/Config";
 
 let config: Config;
 

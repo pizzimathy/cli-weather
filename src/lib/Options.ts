@@ -2,13 +2,11 @@
  * Created by apizzimenti on 5/9/16.
  */
 
-/// <reference path="../../typings/main.d.ts" />
-
 import https = require("https");
 import http = require("http");
 import {Config} from "./Config";
 
-export default class Options {
+export class Options {
     loc: string;
     lat: string;
     long: string;
@@ -95,3 +93,5 @@ export function address_loc(address: string): {loc: string, lat: string, long: s
 
     return loc_info;
 }
+
+console.log(address_loc("52246"));
