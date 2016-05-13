@@ -32,4 +32,3 @@ export class AddrConfig implements Config {
         this.units = argv["c"] || "f";
     }
 }
-

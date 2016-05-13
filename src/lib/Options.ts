@@ -4,6 +4,7 @@
 
 import https = require("https");
 import http = require("http");
+import Promise = require("bluebird");
 import {Config} from "./Config";
 
 export class Options {
@@ -28,70 +29,74 @@ export class Options {
     };
 }
 
-export function ip_loc (ip: string): {loc: string, lat: string, long: string} {
-    const request_options = {
-        host: "freegeoip.net",
-        path: "json/" + ip,
-        method: "GET"
-    };
+let ip_loc = Promise.method((ip: string): any => {
+    return new Promise((resolve, reject) => {
+        const request_options = {
+            host: "freegeoip.net",
+            path: "json/" + ip,
+            method: "GET"
+        };
 
-    let loc_info = {
-        loc: null,
-        lat: null,
-        long: null
-    },
-        chunks: string = "";
+        let loc_info = {
+                loc: null,
+                lat: null,
+                long: null
+            },
+            chunks:string = "";
 
-    http.get(request_options, (res) => {
-        res
-            .on("data", (chunk) => {
-                chunks += chunk;
-            })
-            .on("end", () => {
-                let json = JSON.parse(chunks);
-                loc_info.loc = json.city + ", " + json.region_name + ", " + json.country_name;
-                loc_info.lat = json.latitude;
-                loc_info.long = json.longitude;
-            });
+        http.get(request_options, (res) => {
+            res
+                .on("data", (chunk) => {
+                    chunks += chunk;
+                })
+                .on("end", () => {
+                    let json = JSON.parse(chunks);
+                    loc_info.loc = json.city + ", " + json.region_name + ", " + json.country_name;
+                    loc_info.lat = json.latitude;
+                    loc_info.long = json.longitude;
+                    resolve(loc_info);
+                });
 
-    }).on("error", (err) => {
-        console.log(`got \n\t${err}\nfrom the geoip server.`);
+        }).on("error", (err) => {
+            console.log(`got \n\t${err}\nfrom the geoip server.`);
+        });
     });
+});
 
-    return loc_info;
-}
+export {ip_loc};
 
-export function address_loc(address: string): {loc: string, lat: string, long: string} {
-    const request_options = {
-        host: "maps.googleapis.com",
-        path: "/maps/api/geocode/json?address=" + encodeURIComponent(address),
-        method: "GET"
-    };
+let address_loc = Promise.method((address: string): any => {
+    return new Promise((resolve, reject) => {
+        const request_options = {
+            host: "maps.googleapis.com",
+            path: "/maps/api/geocode/json?address=" + encodeURIComponent(address),
+            method: "GET"
+        };
 
-    let loc_info = {
-        loc: null,
-        lat: null,
-        long: null
-    },
-        chunks: string = "";
+        let loc_info = {
+                loc: null,
+                lat: null,
+                long: null
+            },
+            chunks:string = "";
 
-    https.get(request_options, (res) => {
-        res
-            .on("data", (chunk) => {
-                chunks += chunk;
-            })
-            .on("end", () => {
-                let json = JSON.parse(chunks).results[0];
-                loc_info.loc = json.formatted_address;
-                loc_info.lat = json.geometry.location.lat;
-                loc_info.long = json.geometry.location.long;
-            });
+        https.get(request_options, (res) => {
+            res
+                .on("data", (chunk) => {
+                    chunks += chunk;
+                })
+                .on("end", () => {
+                    let json = JSON.parse(chunks).results[0];
+                    loc_info.loc = json.formatted_address;
+                    loc_info.lat = json.geometry.location.lat;
+                    loc_info.long = json.geometry.location.long;
+                    resolve(loc_info);
+                });
 
-    }).on("error", (err) => {
-        console.log(`got \n\t${err}\nfrom the Google Maps server.`);
+        }).on("error", (err) => {
+            console.log(`got \n\t${err}\nfrom the Google Maps server.`);
+        });
     });
+});
 
-    return loc_info;
-}
-
-console.log(address_loc("52246"));
+export {address_loc};
