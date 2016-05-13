@@ -1,34 +1,31 @@
-/**
- * Created by apizzimenti on 5/10/16.
- */
+#!/usr/bin/env node
 "use strict";
-
 var https = require("https");
-var argv = require("minimist");
+var parseArgs = require("minimist");
+var Promise = require("bluebird");
 var Config_1 = require("./lib/Config");
-var config;
+var get_ip = Promise.method(function () {
+    return new Promise(function (resolve, reject) {
+        var request_options = {
+            "host": "api.ipify.org",
+            "method": "GET"
+        };
+        var chunks = "";
+        https.get(request_options, function (res) {
+            res.on("data", function (chunk) {
+                chunks += chunk;
+            }).on("end", function () {
+                resolve(chunks);
+            });
+        }).on("error", function (err) {
+            reject(err);
+        }).end();
+    });
+});
+var config, ip = get_ip().then(function (res) { return res; }), argv = parseArgs(process.argv.slice(2));
 if (!(argv["z"] || argv["a"] || argv["address"] || argv["lat"] || argv["long"])) {
-    config = new Config_1.IpConfig(get_ip(), argv);
+    config = new Config_1.IpConfig(ip, argv);
 }
 else {
     config = new Config_1.AddrConfig(argv);
 }
-function get_ip() {
-    var request_options = {
-        "host": "https://api.ipify.org",
-        "path": "?format=json",
-        "method": "GET"
-    };
-    var chunks = "", data = "";
-    https.get(request_options, function (res) {
-        res
-            .on("data", function (chunk) {
-            chunks += chunk;
-        })
-            .on("end", function () {
-            data = JSON.parse(chunks)["ip"];
-        });
-    });
-    return data;
-}
-exports.get_ip = get_ip;

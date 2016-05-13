@@ -4,6 +4,7 @@
 "use strict";
 var https = require("https");
 var http = require("http");
+var Promise = require("bluebird");
 var Options = (function () {
     function Options(config) {
         this.args = config.argv;
@@ -24,60 +25,63 @@ var Options = (function () {
     return Options;
 }());
 exports.Options = Options;
-function ip_loc(ip) {
-    var request_options = {
-        host: "freegeoip.net",
-        path: "json/" + ip,
-        method: "GET"
-    };
-    var loc_info = {
-        loc: null,
-        lat: null,
-        long: null
-    }, chunks = "";
-    http.get(request_options, function (res) {
-        res
-            .on("data", function (chunk) {
-            chunks += chunk;
-        })
-            .on("end", function () {
-            var json = JSON.parse(chunks);
-            loc_info.loc = json.city + ", " + json.region_name + ", " + json.country_name;
-            loc_info.lat = json.latitude;
-            loc_info.long = json.longitude;
+var ip_loc = Promise.method(function (ip) {
+    return new Promise(function (resolve, reject) {
+        var request_options = {
+            host: "freegeoip.net",
+            path: "json/" + ip,
+            method: "GET"
+        };
+        var loc_info = {
+            loc: null,
+            lat: null,
+            long: null
+        }, chunks = "";
+        http.get(request_options, function (res) {
+            res
+                .on("data", function (chunk) {
+                chunks += chunk;
+            })
+                .on("end", function () {
+                var json = JSON.parse(chunks);
+                loc_info.loc = json.city + ", " + json.region_name + ", " + json.country_name;
+                loc_info.lat = json.latitude;
+                loc_info.long = json.longitude;
+                resolve(loc_info);
+            });
+        }).on("error", function (err) {
+            console.log("got \n\t" + err + "\nfrom the geoip server.");
         });
-    }).on("error", function (err) {
-        console.log("got \n\t" + err + "\nfrom the geoip server.");
     });
-    return loc_info;
-}
+});
 exports.ip_loc = ip_loc;
-function address_loc(address) {
-    var request_options = {
-        host: "maps.googleapis.com",
-        path: "/maps/api/geocode/json?address=" + encodeURIComponent(address),
-        method: "GET"
-    };
-    var loc_info = {
-        loc: null,
-        lat: null,
-        long: null
-    }, chunks = "";
-    https.get(request_options, function (res) {
-        res
-            .on("data", function (chunk) {
-            chunks += chunk;
-        })
-            .on("end", function () {
-            var json = JSON.parse(chunks).results[0];
-            loc_info.loc = json.formatted_address;
-            loc_info.lat = json.geometry.location.lat;
-            loc_info.long = json.geometry.location.long;
+var address_loc = Promise.method(function (address) {
+    return new Promise(function (resolve, reject) {
+        var request_options = {
+            host: "maps.googleapis.com",
+            path: "/maps/api/geocode/json?address=" + encodeURIComponent(address),
+            method: "GET"
+        };
+        var loc_info = {
+            loc: null,
+            lat: null,
+            long: null
+        }, chunks = "";
+        https.get(request_options, function (res) {
+            res
+                .on("data", function (chunk) {
+                chunks += chunk;
+            })
+                .on("end", function () {
+                var json = JSON.parse(chunks).results[0];
+                loc_info.loc = json.formatted_address;
+                loc_info.lat = json.geometry.location.lat;
+                loc_info.long = json.geometry.location.long;
+                resolve(loc_info);
+            });
+        }).on("error", function (err) {
+            console.log("got \n\t" + err + "\nfrom the Google Maps server.");
         });
-    }).on("error", function (err) {
-        console.log("got \n\t" + err + "\nfrom the Google Maps server.");
     });
-    return loc_info;
-}
+});
 exports.address_loc = address_loc;
-console.log(address_loc("52246"));
