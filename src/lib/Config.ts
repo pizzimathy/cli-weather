@@ -22,12 +22,12 @@ export class IpConfig implements Config {
 }
 
 export class AddrConfig implements Config {
-    addr: string;
+    address: string;
     argv: any;
     units: string;
 
     constructor (argv: any) {
-        this.addr = argv["address"] || argv["z"] || argv["a"];
+        this.address = argv["address"] || argv["z"] || argv["a"];
         this.argv = argv;
         this.units = argv["c"] || "f";
     }

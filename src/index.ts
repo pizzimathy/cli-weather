@@ -4,38 +4,27 @@
  * Created by apizzimenti on 5/10/16.
  */
 
-import https = require("https");
-import parseArgs = require("minimist");
-import Promise = require("bluebird");
+import parse = require("minimist");
+import axios = require("axios");
 import {IpConfig, AddrConfig} from "./lib/Config";
+import {Location} from "./lib/Location";
 
-let get_ip = Promise.method(() => {
-    return new Promise((resolve, reject) => {
-        const request_options = {
-            "host": "api.ipify.org",
-            "method": "GET"
-        };
+let args = parse(process.argv.slice(2));
 
-        let chunks = "";
+if (!(args["address"] || args["a"] || args["z"] || args["lat"] || args["long"])) {
 
-        https.get(request_options, (res) => {
-            res.on("data", (chunk) => {
-                chunks += chunk;
-            }).on("end", () => {
-                resolve(chunks);
-            });
-        }).on("error", (err) => {
-            reject(err);
-        }).end();
-    });
-});
+    axios.get("https://api.ipify.org?format=json")
+        .then((res) => {
 
-let config,
-    ip = get_ip().then((res) => {return res}),
-    argv = parseArgs(process.argv.slice(2));
+            let config = new IpConfig(res.data.ip, args),
+                loc = new Location(config);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 
-if (!(argv["z"] || argv["a"] || argv["address"] || argv["lat"] || argv["long"])) {
-    config = new IpConfig(ip, argv);
 } else {
-    config = new AddrConfig(argv);
+
+    let config = new AddrConfig(args),
+        loc = new Location(config);
 }
