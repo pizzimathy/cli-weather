@@ -39,3 +39,6 @@ node_modules
 .yo-rc.json
 
 typings
+test
+
+src/**/*.js
