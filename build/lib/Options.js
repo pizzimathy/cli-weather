@@ -2,86 +2,40 @@
  * Created by apizzimenti on 5/9/16.
  */
 "use strict";
-var https = require("https");
-var http = require("http");
-var Promise = require("bluebird");
-var Options = (function () {
-    function Options(config) {
-        this.args = config.argv;
+var axios = require("axios");
+var Location = (function () {
+    function Location(config) {
+        this.argv = config.argv;
         if (config.ip) {
-            var loc_info = ip_loc(config.ip);
-            this.loc = loc_info.loc;
-            this.lat = loc_info.lat;
-            this.long = loc_info.long;
+            ip_loc(config.ip, this);
         }
-        else {
-            var loc_info = address_loc(config.address);
-            this.loc = loc_info.loc;
-            this.lat = loc_info.lat;
-            this.long = loc_info.long;
+        else if (!config.ip) {
+            address_loc(this.argv.address || this.argv.a || this.argv.z, this);
         }
     }
     ;
-    return Options;
+    return Location;
 }());
-exports.Options = Options;
-var ip_loc = Promise.method(function (ip) {
-    return new Promise(function (resolve, reject) {
-        var request_options = {
-            host: "freegeoip.net",
-            path: "json/" + ip,
-            method: "GET"
-        };
-        var loc_info = {
-            loc: null,
-            lat: null,
-            long: null
-        }, chunks = "";
-        http.get(request_options, function (res) {
-            res
-                .on("data", function (chunk) {
-                chunks += chunk;
-            })
-                .on("end", function () {
-                var json = JSON.parse(chunks);
-                loc_info.loc = json.city + ", " + json.region_name + ", " + json.country_name;
-                loc_info.lat = json.latitude;
-                loc_info.long = json.longitude;
-                resolve(loc_info);
-            });
-        }).on("error", function (err) {
-            console.log("got \n\t" + err + "\nfrom the geoip server.");
-        });
+exports.Location = Location;
+var ip_loc = function (ip, context) {
+    axios.get("https://freegeoip.net/json/" + ip)
+        .then(function (res) {
+        context.loc = res.data.city;
+        context.lat = res.data.latitude;
+        context.long = res.data.longitude;
+    }).catch(function (err) {
+        console.log(err);
     });
-});
+};
 exports.ip_loc = ip_loc;
-var address_loc = Promise.method(function (address) {
-    return new Promise(function (resolve, reject) {
-        var request_options = {
-            host: "maps.googleapis.com",
-            path: "/maps/api/geocode/json?address=" + encodeURIComponent(address),
-            method: "GET"
-        };
-        var loc_info = {
-            loc: null,
-            lat: null,
-            long: null
-        }, chunks = "";
-        https.get(request_options, function (res) {
-            res
-                .on("data", function (chunk) {
-                chunks += chunk;
-            })
-                .on("end", function () {
-                var json = JSON.parse(chunks).results[0];
-                loc_info.loc = json.formatted_address;
-                loc_info.lat = json.geometry.location.lat;
-                loc_info.long = json.geometry.location.long;
-                resolve(loc_info);
-            });
-        }).on("error", function (err) {
-            console.log("got \n\t" + err + "\nfrom the Google Maps server.");
-        });
+var address_loc = function (address, context) {
+    axios.get("http://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(address.toString()))
+        .then(function (res) {
+        var data = res.data.results[0], location = address + ", " + data.address_components[2].long_name + ", " + data.address_components[3].long_name;
+        context.loc = location;
+        context.lat = res.data.results[0].geometry.location.lat;
+        context.long = res.data.results[0].geometry.location.lat;
+    }).catch(function (err) {
+        console.log(err);
     });
-});
-exports.address_loc = address_loc;
+};

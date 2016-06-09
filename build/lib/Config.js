@@ -13,7 +13,7 @@ var IpConfig = (function () {
 exports.IpConfig = IpConfig;
 var AddrConfig = (function () {
     function AddrConfig(argv) {
-        this.addr = argv["address"] || argv["z"] || argv["a"];
+        this.address = argv["address"] || argv["z"] || argv["a"];
         this.argv = argv;
         this.units = argv["c"] || "f";
     }
