@@ -11,13 +11,14 @@ export class Location {
     lat: string;
     long: string;
     argv: string;
+    config: Config;
 
     constructor(config: Config) {
-        this.argv = config.argv;
-        if (config.ip) {
-            ip_loc(config.ip, this);
-        } else if (!config.ip) {
-            address_loc(config.address, this);
+        this.config = config;
+        if (this.config.ip) {
+            ip_loc(this.config.ip, this);
+        } else if (!this.config.ip) {
+            address_loc(this.config.address, this);
         }
     };
 }
