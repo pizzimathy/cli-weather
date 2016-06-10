@@ -40,7 +40,5 @@ node_modules
 
 typings
 test
-typings.json
-tsconfig.json
 
 src/**/*.js
