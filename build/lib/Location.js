@@ -6,12 +6,12 @@ var axios = require("axios");
 var Error_1 = require("./Error");
 var Location = (function () {
     function Location(config) {
-        this.argv = config.argv;
-        if (config.ip) {
-            ip_loc(config.ip, this);
+        this.config = config;
+        if (this.config.ip) {
+            ip_loc(this.config.ip, this);
         }
-        else if (!config.ip) {
-            address_loc(config.address, this);
+        else if (!this.config.ip) {
+            address_loc(this.config.address, this);
         }
     }
     ;
