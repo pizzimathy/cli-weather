@@ -16,14 +16,14 @@ module.exports = function (grunt) {
         concat: {
             dist: {
                 src: ['index.js'],
-                dest: 'dist/cli-weather.js'
+                dest: 'build/cli-weather.js'
             }
         },
 
         uglify: {
             dist: {
                 src: '<%= concat.dist.dest %>',
-                dest: 'dist/cli-weather.min.js'
+                dest: 'build/cli-weather.min.js'
             }
         },
 
