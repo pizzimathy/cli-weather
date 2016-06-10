@@ -23,7 +23,7 @@ export class Err {
         this.date = date.toDateString();
         this.time = date.toTimeString();
 
-        process.stdout.write(chalk[color](`${type}\n${message}`));
+        process.stdout.write(chalk[color].(`${type}\n${message}`));
         this.log();
     }
 
