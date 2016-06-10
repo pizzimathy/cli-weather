@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bluebird": "registry:npm/bluebird#3.3.4+20160427051630",
+    "chalk": "registry:npm/chalk#1.0.0+20160211003958",
+    "form-data": "registry:npm/form-data#1.0.0+20160211003958",
+    "request": "registry:npm/request#2.69.0+20160428223725",
+    "tough-cookie": "registry:npm/tough-cookie#2.2.0+20160428222547"
+  },
+  "ambientDependencies": {}
+}

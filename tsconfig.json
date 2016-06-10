@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": false,
+        "outDir": "build/"
+    },
+    "exclude": [
+        "node_modules",
+        "typings"
+    ],
+    "files": [
+        "typings/main.d.ts",
+        "src/index.ts",
+        "src/lib/Config.ts",
+        "src/lib/Location.ts",
+        "src/lib/Weather.ts"
+    ]
+}
