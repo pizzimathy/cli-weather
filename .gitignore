@@ -35,3 +35,4 @@ node_modules
 
 # for configs - snolly, you were right
 /lib/config.json
+.yo-rc.json
