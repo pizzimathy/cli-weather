@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 
 /**
  * Created by apizzimenti on 12/27/15.
