@@ -9,6 +9,9 @@
 **cli-weather** allows you to check the weather without taking a step outside your development environment. Instant,
 accurate location-based current conditions + four-day forecast.
 
+### Download
+`$ npm install cli-weather -g`
+
 ### Updates
 **cli-weather** has received a bit of a facelift! More colors have been added, different symbols, and a better packaging
 system have been implemented. This project is going to be expanded in the near future (hint hint), so there's always room
