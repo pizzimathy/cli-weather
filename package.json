@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/apizzimenti/cli-weather#readme",
   "dependencies": {
+    "argparse": "^1.0.9",
     "chalk": "^1.1.3",
     "cli-table": "^0.3.1",
     "node-emoji": "^1.4.3",
