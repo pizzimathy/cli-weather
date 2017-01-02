@@ -18,5 +18,6 @@ __Options__
 - `-z | --zip` &rarr; Provide a zip code to retrieve weather from.
 - `-a | --address` &rarr; Provide a city name, zip code, partial city name, city/state combo, and it'll try to get weather from there.
 - `-v | --verbose` &rarr; Displays status updates while going through the process of retrieving weather.
+- `-s | --save` &rarr; Saves the current options passed into the command line; these options will be the default settings unless overwritten.
 - `-h | --help` &rarr; Show help.
 
