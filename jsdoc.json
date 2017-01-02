@@ -1,0 +1,11 @@
+{
+    "source": {
+        "include": ["lib/", "lib/README.md"]
+    },
+
+    "opts": {
+        "template": "node_modules/minami",
+        "destination": "../cli-weather-docs",
+        "returse": "true"
+    }
+}
