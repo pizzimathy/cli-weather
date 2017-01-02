@@ -15,4 +15,8 @@ accurate location-based current conditions + four-day forecast.
 
 __Options__
 - `-c | --celsius` &rarr; All units are changed to si (Celsius degrees, meters/second windspeed)
+- `-z | --zip` &rarr; Provide a zip code to retrieve weather from.
+- `-a | --address` &rarr; Provide a city name, zip code, partial city name, city/state combo, and it'll try to get weather from there.
+- `-v | --verbose` &rarr; Displays status updates while going through the process of retrieving weather.
+- `-h | --help` &rarr; Show help.
 
