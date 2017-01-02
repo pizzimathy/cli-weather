@@ -51,5 +51,3 @@ jspm_packages
 .idea/*
 
 *.DS_Store
-private.json
-lib/weather/config.json
