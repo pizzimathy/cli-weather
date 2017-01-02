@@ -4,8 +4,9 @@
   "description": "Puts the weather in your console.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prebuild": "rimraf dist/**/*"
+    "test": "mocha",
+    "prebuild": "rimraf dist/**/* ../cli-weather-docs/**/*",
+    "postbuild": "jsdoc -c ~/desktop/cli-weather/jsdoc.json"
   },
   "bin": {
     "weather": "./lib/index.js"
