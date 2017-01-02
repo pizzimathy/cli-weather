@@ -253,22 +253,9 @@ espree@~3.1.7:
     acorn "^3.3.0"
     acorn-jsx "^3.0.0"
 
-evented-async-loop@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/evented-async-loop/-/evented-async-loop-0.1.1.tgz#66bc317c872ba793d45388a3cc2197ad9fde8d1e"
-
 extend@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.0.tgz#5a474353b9f3353ddd8176dfd37b91c83a46f1d4"
-
-external-ip@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/external-ip/-/external-ip-0.2.4.tgz#2203684025d60c3e1243f597376ab765c3ea82dc"
-  dependencies:
-    commander "^2.9.0"
-    evented-async-loop "^0.1.1"
-    request "^2.40.0"
-    revalidator "^0.3.1"
 
 extsprintf@1.0.2:
   version "1.0.2"
@@ -781,7 +768,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.40.0, request@^2.79.0:
+request@^2.79.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
@@ -811,10 +798,6 @@ requizzle@~0.2.1:
   resolved "https://registry.yarnpkg.com/requizzle/-/requizzle-0.2.1.tgz#6943c3530c4d9a7e46f1cddd51c158fc670cdbde"
   dependencies:
     underscore "~1.6.0"
-
-revalidator@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/revalidator/-/revalidator-0.3.1.tgz#ff2cc4cf7cc7c6385ac710178276e6dbcd03762f"
 
 semver-diff@^2.0.0:
   version "2.1.0"

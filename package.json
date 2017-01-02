@@ -34,7 +34,6 @@
   "dependencies": {
     "chalk": "^1.1.3",
     "cli-table2": "^0.2.0",
-    "external-ip": "^0.2.4",
     "request": "^2.79.0",
     "update-notifier": "^1.0.3",
     "wordwrap": "^1.0.0"
