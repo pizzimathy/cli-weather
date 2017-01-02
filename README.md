@@ -9,6 +9,15 @@
 **cli-weather** allows you to check the weather without taking a step outside your development environment. Instant,
 accurate location-based current conditions + four-day forecast.
 
+### Updates
+**cli-weather** has received a bit of a facelift! More colors have been added, different symbols, and a better packaging
+system have been implemented. This project is going to be expanded in the near future (hint hint), so there's always room
+for added features.
+
+### Contributing
+Contribute as much as you want! Just open up a pull request and we can look it over together. And, as always, feedback is
+appreciated.
+
 ### Usage
 
 `$ weather [options]`
@@ -19,5 +28,5 @@ __Options__
 - `-a | --address` &rarr; Provide a city name, zip code, partial city name, city/state combo, and it'll try to get weather from there.
 - `-v | --verbose` &rarr; Displays status updates while going through the process of retrieving weather.
 - `-s | --save` &rarr; Saves the current options passed into the command line; these options will be the default settings unless overwritten.
-- `-h | --help` &rarr; Show help.
+- `-h | --help` &rarr; Show help. This cannot be saved as a default option.
 
