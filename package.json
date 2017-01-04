@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha",
     "prebuild": "rimraf dist/**/* ../cli-weather-docs/**/*",
+    "build": "echo 'cleaning folders and generating docs'",
     "postbuild": "jsdoc -c ~/desktop/cli-weather/jsdoc.json"
   },
   "bin": {
@@ -37,12 +38,12 @@
     "cli-table2": "^0.2.0",
     "geocoder": "^0.2.2",
     "minimist": "^1.2.0",
-    "node-emoji": "^1.4.3",
     "request": "^2.79.0",
     "wordwrap": "^1.0.0"
   },
   "devDependencies": {
     "jsdoc": "^3.4.3",
+    "minami": "^1.1.1",
     "mocha": "^3.2.0"
   }
 }
