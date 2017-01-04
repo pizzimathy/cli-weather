@@ -39,7 +39,6 @@
     "minimist": "^1.2.0",
     "node-emoji": "^1.4.3",
     "request": "^2.79.0",
-    "update-notifier": "^1.0.3",
     "wordwrap": "^1.0.0"
   },
   "devDependencies": {
