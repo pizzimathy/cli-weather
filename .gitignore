@@ -50,6 +50,10 @@ jspm_packages
 
 .idea/*
 
+yarn.lock
+.npmignore
+dist
+
 *.DS_Store
 private.json
 lib/weather/config.json
