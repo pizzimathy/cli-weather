@@ -50,7 +50,6 @@ jspm_packages
 
 .idea/*
 
-yarn.lock
 .npmignore
 dist
 
