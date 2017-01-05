@@ -31,5 +31,4 @@ __Options__
 - `-a | --address` &rarr; Provide a city name, zip code, partial city name, city/state combo, and it'll try to get weather from there.
 - `-v | --verbose` &rarr; Displays status updates while going through the process of retrieving weather.
 - `-s | --save` &rarr; Saves the current options passed into the command line; these options will be the default settings unless overwritten.
-- `-h | --help` &rarr; Show help. This cannot be saved as a default option.
-
+- `-h | --help` &rarr; Show help. This cannot be saved as a default options.
