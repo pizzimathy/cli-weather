@@ -10,7 +10,7 @@
 accurate location-based current conditions + four-day forecast.
 
 ### Download
-`$ npm install cli-weather -g`
+`$ npm install cli-weather -g` or `$ yarn global add cli-weather`
 
 ### Updates
 **cli-weather** has received a bit of a facelift! More colors have been added, different symbols, and a better packaging
