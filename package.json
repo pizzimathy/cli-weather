@@ -4,7 +4,7 @@
   "description": "Puts the weather in your console.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "eslint lib/**",
     "prebuild": "rimraf dist/**/* ../cli-weather-docs/**/*",
     "build": "echo 'cleaning folders and generating docs'",
     "postbuild": "jsdoc -c ~/desktop/cli-weather/jsdoc.json"
@@ -38,6 +38,7 @@
     "cli-table2": "^0.2.0",
     "geocoder": "^0.2.2",
     "minimist": "^1.2.0",
+    "open": "^0.0.5",
     "request": "^2.79.0",
     "wordwrap": "^1.0.0"
   },
