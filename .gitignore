@@ -49,8 +49,6 @@ jspm_packages
 .yarn-integrity
 
 .idea/*
-
-.npmignore
 dist
 
 *.DS_Store
