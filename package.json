@@ -1,6 +1,6 @@
 {
   "name": "cli-weather",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Puts the weather in your console.",
   "main": "index.js",
   "scripts": {
