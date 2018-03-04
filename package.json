@@ -4,7 +4,7 @@
   "description": "Puts the weather in your console.",
   "main": "index.js",
   "scripts": {
-    "test": "eslint lib/**",
+    "test": "./lib/index.js && eslint lib/**",
     "prebuild": "rimraf dist/**/* ../cli-weather-docs/**/*",
     "build": "echo 'cleaning folders and generating docs'",
     "postbuild": "jsdoc -c ~/desktop/cli-weather/jsdoc.json"
