@@ -1,6 +1,6 @@
 {
   "name": "cli-weather",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Puts the weather in your console.",
   "main": "index.js",
   "scripts": {
@@ -39,12 +39,12 @@
     "geocoder": "^0.2.2",
     "minimist": "^1.2.0",
     "open": "^0.0.5",
-    "request": "^2.79.0",
+    "request": "^2.88.0",
     "wordwrap": "^1.0.0"
   },
   "devDependencies": {
     "jsdoc": "^3.4.3",
     "minami": "^1.1.1",
-    "mocha": "^3.2.0"
+    "mocha": "^5.2.0"
   }
 }
